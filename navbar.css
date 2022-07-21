@@ -1,0 +1,35 @@
+  * {
+        margin: 0px;
+        padding: 0px;
+        font-family: "Open Sans", sans-serif;
+      }
+      #navbar {
+        height: 80px;
+        width: 100%;
+        background-color:#041628;
+        display: grid;
+        grid-template-columns: 25vw 75vw;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #navbar > div {
+        margin: auto 60px;
+      }
+      #logo img {
+        margin: auto;
+        height: 32px;
+      }
+      #navbar > div:last-child {
+        display: grid;
+        grid-template-columns: repeat(7,auto);
+        gap: 30px;
+      }
+      #navbar{
+        color: white;
+      }
+      i {
+        font-size: 17px;
+      }
+      #navbar>div>p:hover ,#navbar>div>div:hover {
+        color: #428bca;
+      }

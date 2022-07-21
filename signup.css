@@ -1,0 +1,50 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+#tag{
+    margin: 30px auto 30px 70px;
+    font-size: xx-large;
+}
+#main{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    margin: auto;
+}
+form{
+    width: 100%;
+    display: grid;
+    gap: 25px;
+}
+
+form>.inputDiv{
+    display: grid;
+    grid-template-columns: 33% 67%;
+    gap: 30px;
+
+}
+.inputDiv>label{
+    width: 55%;
+    display:inline-block;
+    justify-self:end;
+    text-align:end;
+    align-self: center;
+    
+}
+.inputDiv label{
+    font-weight: bold;
+  
+}
+form input,form select{
+    padding: 8px;
+}
+form select{
+    text-align: center;
+}
+.upside{
+  text-align: top;
+}
+p,.input-group-addon{
+      color: #555;
+}
