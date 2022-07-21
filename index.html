@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: "Open Sans", sans-serif;
+      }
+      #navbar {
+        height: 90px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1;
+      }
+      #navbar > div {
+        margin: auto 70px;
+      }
+      #logo img {
+        margin: auto;
+        height: 32px;
+      }
+      #navbar > div:last-child {
+        display: flex;
+        gap: 25px;
+      }
+      #navbar > div > p {
+        color: white;
+      }
+      #navbar > div > :hover,
+      #navbar > div > i:hover {
+        color: #428bca;
+        font-weight: bold;
+      }
+      video {
+        width: 100%;
+        z-index: -1;
+        margin-bottom: -4px;
+      }
+      i {
+        font-size: 17px;
+        color: white;
+      }
+      #personalTrainer {
+        width: 100%;
+        height: auto;
+        margin: 0px auto;
+        background-color: #26a9e1;
+        display: grid;
+        grid-template-columns: 1fr 0.9fr;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 60px;
+      }
+      #personalTrainer div:first-child {
+        display: grid;
+        gap: 30px;
+      }
+      #personalTrainer img {
+        margin: 0%;
+        width: 100%;
+      }
+      #personalTrainer button {
+        width: 45%;
+        padding: 17px;
+        color: white;
+        background-color: black;
+        font-size: 1.3em;
+        border-radius: 10px;
+      }
+      .feature img {
+        display: block;
+        margin: auto;
+        width: 70%;
+      }
+      .feature {
+        margin: 50px auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        justify-content: space-evenly;
+      }
+      .feature > div {
+        width: 80%;
+        margin: auto;
+      }
+      .featureDiv {
+        display: grid;
+        gap: 20px;
+      }
+      .featureDiv > p {
+        color: #041628;
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 10px;
+      }
+      .featureDiv > button {
+        width: 60%;
+        padding: 17px;
+        color: white;
+        background-color: #26a9e1;
+        border: 0px;
+        font-size: 1.3em;
+        border-radius: 10px;
+      }
+   .footer-lifted {
+    padding-top: 112px;
+    padding-bottom: 95px;
+    background-color: #e6e7ea;
+    text-align: center;
+}
+.footer-lifted .label{
+   background-color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size:36px;
+    font-weight: 600;
+    color: #041628;
+}
+.footer-counter>span:last-child{
+       font-size: 30px;
+       margin-left: 6px;
+       
+}
+.footer-lifted>.lead{
+   margin-top:20px;
+   font-size: 1.2rem;
+}
+#footer-container{
+   width: 100%;
+   background-color: #26a9e1;
+}
+#footer{
+   width: 100%;
+   padding:80px 0 ;
+   display:grid;
+   grid-template-columns: repeat(5, 0.15fr);
+   gap: 20px;
+}
+#footer>.col:first-child{
+   margin-left:50px;
+}
+#footer>.col>.lead{
+   font-size: 15px;
+   font-weight: 600;
+    color: #041628;
+    margin-bottom: 30px;
+}
+#footer .content{
+   margin-top: 15px;
+   color: white;
+   font-size: 17px;
+}
+#footer img{
+   display: block;
+   width:75%;
+   margin-bottom: 10px;
+}
+#footer #fb{
+   width: 20%;
+}
+#footer-container>hr{
+   width: 90%;
+   color: white;
+   border: 0.01px solid white;
+   margin: auto;
+   margin-bottom: 30px;
+}
+#copy{
+   width: 90%;
+   margin: auto;
+   color: white;
+   padding-bottom: 30px;
+}
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="navbar">
+        <div id="logo">
+          <img src="https://www.gymwolf.com/img/gymwolf.png" alt="" />
+        </div>
+        <div>
+          <p>Register</p>
+          <p>Sign In</p>
+          <i class="fa fa-search"></i>
+        </div>
+      </div>
+
+      <video autoplay="" muted="" loop="" id="landing-video">
+        <source
+          src="https://www.gymwolf.com/images/Gymwolf_video.mp4"
+          type="video/mp4"
+        />
+      </video>
+
+      <div id="personalTrainer">
+        <div style="position: relative; left: 60px">
+          <h1 style="color: white; font-size: 2.5em">
+            Online personal trainer
+          </h1>
+          <p style="width: 80%; line-height: 140%; font-size: 1.2rem">
+            Gymwolf has certified personal trainers that provide you with
+            customised workout plans depending on your goals. Our trainers track
+            your progress, coach and motivate you daily through our web and
+            smartphone app.
+          </p>
+          <button>Learn more</button>
+        </div>
+        <div>
+          <img src="https://www.gymwolf.com/img/trainer-bg.jpg" alt="" />
+        </div>
+      </div>
+
+      <div id="containerFeature">
+        <div class="feature">
+          <div class="featureDiv">
+            <h1>Features</h1>
+            <p>
+              Gymwolf is a workout tracking tool. Add workouts, create your own
+              customized workout plans or find suitable plan from other users.
+              Accomplish your goals with motivation from personal trainer and
+              committed training
+            </p>
+            <button>Take a tour</button>
+          </div>
+          <div>
+            <img
+              src="https://www.gymwolf.com/img/landing/features-img.png"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="feature">
+          <div>
+            <img
+              src="https://www.gymwolf.com/img/landing/progress-img.png"
+              alt=""
+            />
+          </div>
+          <div class="featureDiv">
+            <h1>See your progress</h1>
+            <p>
+              Gymwolf provides different graphs that help you track your
+              progress. There are graphs for gym workouts, cardio workouts and
+              bodyweight. The graphs are highly customizable: you can select the
+              date range, exercise and group the results by month, week or
+              single workout.
+            </p>
+            <button>Take a tour</button>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="featureDiv">
+            <h1>Database with 300+ exercises</h1>
+            <p>
+              Gymwolf has a database with over 300 exercises. The exercises come
+              with detailed descriptions, tips and step-by-step images. If you
+              don't find a exercise from our database, then you can also add
+              your own exercises.
+            </p>
+            <button>Check out</button>
+          </div>
+          <div>
+            <img
+              src="https://www.gymwolf.com/img/landing/database-img.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-lifted">
+        <p class="footer-counter">
+          <span class="label">1</span>
+          <span class="label">1</span>
+          <span class="label">4</span>
+          <span class="label">0</span>
+          <span class="label">2</span>
+          <span class="label">1</span>
+          <span class="label">9</span>
+          <span class="label">8</span>
+          <span class="label">0</span>
+          <span class="label">2</span>
+          <span>kg</span>
+        </p>
+        <p class="lead">LIFTED USING GYMWOLF</p>
+      </div>
+
+      <div id="footer-container">
+         <div id="footer">
+         <div class="col">
+            <p class="lead">ABOUT</p>
+             <p class="content">About us</p>
+             <p class="content">Contact</p>
+         </div>
+         <div class="col">
+            <p class="lead">LEGAL</p>
+             <p class="content">Terms of Service</p>
+             <p class="content">Privacy</p>
+             <p class="content">Pricing</p>
+         </div>
+         <div class="col">
+            <p class="lead">Get the app</p>
+            <img src="https://www.gymwolf.com/img/footer/android-button.png" alt="">
+            <img src="https://www.gymwolf.com/img/footer/ios-button.png" alt="">
+         </div>
+         <div class="col">
+            <p class="lead">SOCIAL</p>
+            <img id="fb" src="https://www.gymwolf.com/img/footer/fb-button.png"></img>
+         </div>
+         <div class="col">
+            <p class="lead">LANGUAGE</p>
+             <p class="content">Eesti keeles</p>
+         </div>
+      </div>
+        <hr>
+        <div id="copy">
+         <p>Copyright © Mooncascade OÜ. All Rights Reserved. Tel: +372 5344 5686. E-mail: info@gymwolf.com</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
