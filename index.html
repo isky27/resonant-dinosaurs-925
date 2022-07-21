@@ -39,6 +39,10 @@
       #navbar > div > p {
         color: white;
       }
+      i {
+        font-size: 17px;
+        color: white;
+      }
       #navbar > div > :hover,
       #navbar > div > i:hover {
         color: #428bca;
@@ -47,11 +51,36 @@
       video {
         width: 100%;
         z-index: -1;
+        margin-top: -50px;
         margin-bottom: -4px;
+        position: relative;
       }
-      i {
-        font-size: 17px;
-        color: white;
+      #videoText{
+         position: absolute;
+         top:170px;
+         left: 0%;
+         right: 0%;
+         width: 100%;
+         margin: auto;
+         text-align: center;
+         color: white; 
+         z-index: 1;
+      }
+      #videoText>h1{
+         font-size: 60px;
+      }
+      #videoText>button{
+        width: 25%;
+        padding: 20px;
+        background-color: #26a9e1;
+        border: none;
+        font-size: 1.3em;
+        border-radius: 10px;
+        margin: 70px auto 50px auto;
+         color: white;
+      }
+      #videoText span{
+         margin-left: 10px;
       }
       #personalTrainer {
         width: 100%;
@@ -111,7 +140,7 @@
         padding: 17px;
         color: white;
         background-color: #26a9e1;
-        border: 0px;
+        border: none;
         font-size: 1.3em;
         border-radius: 10px;
       }
@@ -198,13 +227,20 @@
           <i class="fa fa-search"></i>
         </div>
       </div>
-
+     
+         <div id="videoText">
+         <h1>A better way to track your workouts</h1>
+         <button id="textBtn">Start free</button>
+         <p>See how it works<span class="fa fa-chevron-circle-right"></span></p>
+      </div>
       <video autoplay="" muted="" loop="" id="landing-video">
         <source
           src="https://www.gymwolf.com/images/Gymwolf_video.mp4"
           type="video/mp4"
         />
       </video>
+
+   
 
       <div id="personalTrainer">
         <div style="position: relative; left: 60px">
