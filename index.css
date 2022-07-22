@@ -1,0 +1,157 @@
+  * {
+        margin: 0px;
+        padding: 0px;
+        font-family: "Open Sans", sans-serif;
+      }
+      #navbar {
+        height: 90px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1;
+      }
+      #navbar > div {
+        margin: auto 70px;
+      }
+      #logo img {
+        margin: auto;
+        height: 32px;
+      }
+      #navbar > div:last-child {
+        display: flex;
+        gap: 25px;
+      }
+      #navbar > div > p {
+        color: white;
+      }
+      i {
+        font-size: 17px;
+        color: white;
+      }
+      #navbar > div :hover,
+      #navbar > div > i:hover {
+        color: #428bca;
+        font-weight: bold;
+      }
+       video {
+        width: 100%;
+        z-index: -1;
+        margin-top: -50px;
+        margin-bottom: -4px;
+        position: relative;
+      }
+      #videoText{
+         position: absolute;
+         top:170px;
+         left: 0%;
+         right: 0%;
+         width: 100%;
+         margin: auto;
+         text-align: center;
+         color: white; 
+         z-index: 1;
+      }
+      #videoText>h1{
+         font-size: 60px;
+      }
+      #videoText>button{
+        width: 25%;
+        padding: 20px;
+        background-color: #26a9e1;
+        border: none;
+        font-size: 1.3em;
+        border-radius: 10px;
+        margin: 70px auto 50px auto;
+         color: white;
+      }
+      #videoText span{
+         margin-left: 10px;
+      }
+      #personalTrainer {
+        width: 100%;
+        height: auto;
+        margin: 0px auto;
+        background-color: #26a9e1;
+        display: grid;
+        grid-template-columns: 1fr 0.9fr;
+        justify-content: flex-end;
+        align-items: center;
+        margin-bottom: 60px;
+      }
+      #personalTrainer div:first-child {
+        display: grid;
+        gap: 30px;
+      }
+      #personalTrainer img {
+        margin: 0%;
+        width: 100%;
+      }
+      #personalTrainer button {
+        width: 45%;
+        padding: 17px;
+        color: white;
+        background-color: black;
+        font-size: 1.3em;
+        border-radius: 10px;
+      }
+      .feature img {
+        display: block;
+        margin: auto;
+        width: 70%;
+      }
+      .feature {
+        margin: 50px auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        justify-content: space-evenly;
+      }
+      .feature > div {
+        width: 80%;
+        margin: auto;
+      }
+      .featureDiv {
+        display: grid;
+        gap: 20px;
+      }
+      .featureDiv > p {
+        color: #041628;
+        font-size: 20px;
+        line-height: 30px;
+        margin-bottom: 10px;
+      }
+      .featureDiv > button {
+        width: 60%;
+        padding: 17px;
+        color: white;
+        background-color: #26a9e1;
+        border: none;
+        font-size: 1.3em;
+        border-radius: 10px;
+      }
+   .footer-lifted {
+    padding-top: 112px;
+    padding-bottom: 95px;
+    background-color: #e6e7ea;
+    text-align: center;
+}
+.footer-lifted .label{
+   background-color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size:36px;
+    font-weight: 600;
+    color: #041628;
+}
+.footer-counter>span:last-child{
+       font-size: 30px;
+       margin-left: 6px;
+       
+}
+.footer-lifted>.lead{
+   margin-top:20px;
+   font-size: 1.2rem;
+}
