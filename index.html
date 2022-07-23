@@ -15,29 +15,63 @@
   </head>
   <body>
     <div id="container">
+      <!----------------Navbar----------------->
       <div id="navbar">
         <div id="logo">
           <img src="https://www.gymwolf.com/img/gymwolf.png" alt="" />
         </div>
         <div>
-          <p>Register</p>
-          <p>Sign In</p>
+          <p id="registerbtn">Register</p>
+          <p onClick="openForm()" >Sign In </p>
           <i class="fa fa-search"></i>
         </div>
       </div>
-     
+      <!----------------------Sign In PopUp------------->
+      <div id="popUpBox">
+       <div class="form-popup" id="myForm">
+        <button type="button" id="btnCancel" onclick="closeForm()">×</button> 
+        <form class="form-container">
+        <p id="heading">Sign In</p>
+         <input id="mail" type="text" placeholder="E-mail" name="email" required>
+         <input id="password" type="password" placeholder="Password" name="psw" required>
+         <p id="forget">Forgot password?</p>
+         <button type="submit" class="btn">Sign In</button>
+         <h3 class="text-muted">- Or -</h3>
+         <button class="fbBtn"><span class="fa fa-facebook"></span> | Sign In with Facebook
+         </button><br>
+         <div>
+             <span class="text-muted">Not a Gymwolf user?</span><a id="register">Register</a>
+         </div>
+         </form>
+        </div>
+      </div>
+    
+     <!---------------------Video Text----------->
          <div id="videoText">
-         <h1>A better way to track your workouts</h1>
-         <button id="textBtn">Start free</button>
+            <h1>A better way to track your workouts</h1>
+                <div id="signUpBox">
+                <button id="textBtn">Start free</button>
+            </div>
+            <!-----------------After signup button press-->
+          <div id="afterSignUpBox">
+            <div>
+               <input id="email" type="email" placeholder="Your E-mail address">
+               <button onclick="handleSignUp()">Register</button>
+            </div>
+              <h3 class="text-muted">- Or -</h3>
+              <button class="fbBtn"><span class="fa fa-facebook"></span> | Sign In with Facebook</button><br>
+              <p>By signing up you agree to the Terms of Service of Gymwolf.</p>
+          </div>
          <p>See how it works<span class="fa fa-chevron-circle-right"></span></p>
       </div>
+      <!---------------------Video---------------------->
       <video autoplay="" muted="" loop="" id="landing-video">
         <source
           src="https://www.gymwolf.com/images/Gymwolf_video.mp4"
           type="video/mp4"
         />
       </video>
-
+<!-------------------------Personal Trainer------------------>
       <div id="personalTrainer">
         <div style="position: relative; left: 60px">
           <h1 style="color: white; font-size: 2.5em">
@@ -55,7 +89,7 @@
           <img src="https://www.gymwolf.com/img/trainer-bg.jpg" alt="" />
         </div>
       </div>
-
+<!-------------------------Feature-------------------------->
       <div id="containerFeature">
         <div class="feature">
           <div class="featureDiv">
@@ -113,7 +147,7 @@
           </div>
         </div>
       </div>
-
+<!---------------------------Footer------------------------>
       <div class="footer-lifted">
         <p class="footer-counter">
           <span class="label">1</span>
@@ -166,3 +200,38 @@
     </div>
   </body>
 </html>
+<script src="signin.js"></script>
+<script>
+      let userData=JSON.parse(localStorage.getItem("gymSignUp"))||[];
+
+     
+
+      document.querySelector("#afterSignUpBox").style.display="none"
+      document.querySelector("#textBtn").addEventListener("click", openSignUpBox);
+      document.querySelector("#registerbtn").addEventListener("click", openSignUpBox);
+        
+      function openSignUpBox(){
+        document.querySelector("#signUpBox").style.display="none";
+        document.querySelector("#afterSignUpBox").style.display="block";
+      }
+
+      function handleSignUp(){
+         let obj={
+          email:document.querySelector("#email").value
+         }
+         let flag=true;
+         userData.forEach(function(ele){
+          if(ele.email==document.querySelector("#email").value){
+           alert("User alredy exist");
+            flag=false;
+            return;
+            }
+        });
+        if(flag==true){
+          
+                localStorage.setItem("emailData",JSON.stringify(obj))
+                window.location.href="signup.html"
+            }
+      }
+</script>
+

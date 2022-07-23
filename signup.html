@@ -29,20 +29,12 @@
           <div>
             <i class="fa fa-comments" aria-hidden="true"></i>
           </div>
-          <div>
+          <div id="profileName" onclick="openDropDown()">
             <span>Your profile is incomplete</span>
-            <span><i class="fa fa-caret-down" aria-hidden="true"></i
-            ></span>
-            <!-- <ul class="dropdown-menu">
-					<li>Edit Profile</li>
-					<li>Upgradto PRO</li>
-					<li class="divider"></li>
-					<li class="dropdown-header">Language</li>
-					<li>In English</li>
-					<li>Eesti keeles</li>
-					<li class="divider"></li>
-					<li>Log Out</li>
-					</ul> -->
+            <span><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+             <div class="dropdown-content">
+                 <p onclick="handleLogOut()">Log Out</p>
+             </div>
           </div>
           <div>
               <i class="fa fa-search"></i>
@@ -59,7 +51,7 @@
    <form>
         <div class="inputDiv">
             <label for="">E-mail:</label>
-            <input id="mail" type="mail">
+            <p id="email"></p>
         </div>
         <div class="inputDiv">
             <label for="">Your name:</label>
@@ -301,12 +293,25 @@
     </div>
   </body>
 </html>
+<script src="navbar.js"></script>
 <script>
    let userData=JSON.parse(localStorage.getItem("gymSignUp"))||[];
 
+let checkflag = JSON.parse(localStorage.getItem("authentication")) || false;
+
+
+    if(checkflag==true){
+        window.location.href="exercise.html"
+      }
+
+   let email = JSON.parse(localStorage.getItem("emailData")).email;
+    document.querySelector("#email").innerText =email;
+
     document.querySelector("form").addEventListener("submit", handleSignUp);
+
     function handleSignUp(event){
         event.preventDefault();
+
         let formgender=null;
          let finalPassword=null;
          if(document.querySelector("#gender_male").value!==""){
@@ -323,16 +328,15 @@
         }else{
              finalPassword=document.querySelector("#pass").value
         }
-        console.log(finalPassword,Dob,formgender)
         let obj={
-            email:document.querySelector("#mail").value,
+            email:email,
             name:document.querySelector("#name").value,
             gender:formgender,
             dob:Dob,
             password:finalPassword,
             gym:document.querySelector("#mygym").value,
             description:document.querySelector("#description").value,
-            profileURL:("www.gymwolf.com/"+document.querySelector("#gwun"))
+            profileURL:("www.gymwolf.com/"+document.querySelector("#gwun").value)
         }
         let flag=true;
         if(obj.name==""||obj.email==""||obj.password==""){
@@ -340,18 +344,14 @@
             flag=false;
             return;
         }
-        userData.forEach(function(ele){
-                if(ele.email==obj.email){
-                alert("User alredy exist");
-                flag=false;
-                return;
-                }
-        });
+        
             if(flag===true){
                 userData.push(obj);
+                localStorage.setItem("name" , (obj.name))
                 alert("SignUp Successfully")
-                // window.location.href="signIn.html";
-                localStorage.setItem("gymSignUpData", JSON.stringify(userData));
+                window.location.href="exercise.html";
+                localStorage.setItem("authentication", "true");
+                localStorage.setItem("gymSignUp", JSON.stringify(userData));
         }
    }
 </script>
