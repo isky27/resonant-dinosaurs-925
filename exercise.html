@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="navbar.css" />
+     <link rel="stylesheet" href="footer.css" />
+</head>
+<body>
+    <div id="container">
+      <div id="navbar">
+        <div id="logo">
+          <img src="https://www.gymwolf.com/img/gymwolf.png" alt="" />
+        </div>
+        <div id="menu">
+          <p>Progress</p>
+          <p>Calculators</p>
+          <p>Exercise and plans</p>
+          <p>My personal trainer</p>
+          <div>
+            <i class="fa fa-comments" aria-hidden="true"></i>
+          </div>
+          <div id="profileName" onclick="openDropDown()">
+            <span id="tagname">Your profile is incomplete</span>
+            <span><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+              <div class="dropdown-content">
+                 <p onclick="handleLogOut()">Log Out</p>
+              </div>
+          </div>
+          <div>
+              <i class="fa fa-search"></i>
+          </div>
+       
+        </div>
+      </div>
+        <div id="footer-container">
+         <div id="footer">
+         <div class="col">
+            <p class="lead">ABOUT</p>
+             <p class="content">About us</p>
+             <p class="content">Contact</p>
+         </div>
+         <div class="col">
+            <p class="lead">LEGAL</p>
+             <p class="content">Terms of Service</p>
+             <p class="content">Privacy</p>
+             <p class="content">Pricing</p>
+         </div>
+         <div class="col">
+            <p class="lead">Get the app</p>
+            <img src="https://www.gymwolf.com/img/footer/android-button.png" alt="">
+            <img src="https://www.gymwolf.com/img/footer/ios-button.png" alt="">
+         </div>
+         <div class="col">
+            <p class="lead">SOCIAL</p>
+            <img id="fb" src="https://www.gymwolf.com/img/footer/fb-button.png"></img>
+         </div>
+         <div class="col">
+            <p class="lead">LANGUAGE</p>
+             <p class="content">Eesti keeles</p>
+         </div>
+      </div>
+        <hr>
+        <div id="copy">
+         <p>Copyright © Mooncascade OÜ. All Rights Reserved. Tel: +372 5344 5686. E-mail: info@gymwolf.com</p>
+        </div>
+      </div>
+    </div>      
+</body>
+</html>
+<script src="navbar.js"></script>
