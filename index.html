@@ -40,7 +40,7 @@
          <button class="fbBtn"><span class="fa fa-facebook"></span> | Sign In with Facebook
          </button><br>
          <div>
-             <span class="text-muted">Not a Gymwolf user?</span><a id="register">Register</a>
+             <span class="text-muted">Not a Gymwolf user?</span><span id="register">Register</span>
          </div>
          </form>
         </div>
@@ -54,7 +54,7 @@
             </div>
             <!-----------------After signup button press-->
           <div id="afterSignUpBox">
-            <div>
+            <div id="inputmail">
                <input id="email" type="email" placeholder="Your E-mail address">
                <button onclick="handleSignUp()">Register</button>
             </div>
@@ -208,9 +208,11 @@
 
       document.querySelector("#afterSignUpBox").style.display="none"
       document.querySelector("#textBtn").addEventListener("click", openSignUpBox);
+      document.querySelector("#register").addEventListener("click", openSignUpBox);
       document.querySelector("#registerbtn").addEventListener("click", openSignUpBox);
         
       function openSignUpBox(){
+        document.getElementById("popUpBox").style.display = "none";
         document.querySelector("#signUpBox").style.display="none";
         document.querySelector("#afterSignUpBox").style.display="block";
       }

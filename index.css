@@ -97,6 +97,9 @@
   margin-top: 10px ;
   margin-bottom: 20px;
 }
+.form-container #register{
+   cursor:pointer;
+}
 .form-container .text-muted{
    color: #ccc; 
    font-size: 14px;
@@ -195,6 +198,45 @@ video {
       #videoText span{
          margin-left: 10px;
       }
+      #inputmail{
+        margin-top: 10px;
+      }
+      #inputmail>input{
+        width:400px;
+        border-radius:10px ;
+        border: none;
+        padding: 20px;
+      }
+      #inputmail>button{
+        padding: 18px 30px;
+        border-radius: 10px;
+        border: none;
+        color: white;
+        font-size: larger;
+        background-color: #26a9e1;
+      }
+      #afterSignUpBox h3{
+        margin: 15px auto 15px auto;
+      }
+      #afterSignUpBox>.fbBtn{
+        color: #ffffff;
+        background-color: #3b5998;
+        padding: 20px 1px;
+        font-size: 16px;
+        line-height: 1.428571429;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        width:250px;
+        margin: 10px auto 25px auto;
+      }
+      #afterSignUpBox>p{
+        margin: 10px auto 60px auto;
+        font-size: smaller;
+      }
+
       #personalTrainer {
         width: 100%;
         height: auto;

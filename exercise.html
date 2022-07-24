@@ -1,77 +1,585 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-      <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="navbar.css" />
-     <link rel="stylesheet" href="footer.css" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="navbar.css" />
+  <link rel="stylesheet" href="footer.css" />
+  <style>
+    #bodyMain{
+      width: 100%;
+      height: auto;
+      margin: 0px;
+      padding: 0px;
+    }
+    #mainImg{
+      width: 100%;
+      position: relative;
+      display: grid;
+    }
+    #mainImg>img{
+      width: 100%;
+    }
+    #mainImg>p{
+      color: white;
+      font-size: xxx-large;
+      position: absolute;
+      justify-self: center;
+      align-self: center;
+      z-index: 2;
+    }
+    #menu_list{
+      width: 90%;
+      margin: auto;
+      margin-top: 15px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: .3px solid #ddd;
+    }
+    #menu_list>#menu{
+      display: grid;
+      grid-template-columns: repeat(3,120px);
+    }
+    #menu_list>#menu>p{
+      color: #428bca;
+      text-align: center;
+      font-size:15px;
+      padding: 10px;
+    }
+     #menu_list>#menu>p:first-child{
+      z-index: 11;
+      border: .5px solid #ddd;
+      border-bottom: white;
+    }
+    #menu_list button{
+    background: #2ecc71;
+    margin-top: -6px;
+    padding: 6px 18px;
+    font-size: 16px;
+    font-weight:540;
+    line-height: 1.428571429;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: white;
+    }
+    #imageContainer{
+      width: 90%;
+      margin: auto;
+    }
+    #imageContainer>p{ 
+      font-size: 40px;
+      margin: 25px 0px 15px 0px;
+      padding-bottom:20px ;
+      border-bottom: .3px solid #ddd;
+    }
+    #cardsContainer{
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 13px;
+      text-align: center;
+    }
+    #cardsContainer>div{
+      display: grid;
+      position:relative;
+      width: 100%;
+    }
+    #cardsContainer img{
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    #cardsContainer>div>div{
+      width: 100%;
+      position:absolute;
+      text-align: center;
+      justify-self: center;
+      align-self: flex-end ;
+      z-index: 4;
+      color: white;
+      padding: 10px 0;
+      background-color: rgba(0,0,0,0.6);
+      font-size: 18px;
+    }
+    #cardsContainer>div>div:hover{
+       background-color: #1a8cf1;
+       opacity: .6;
+        padding: 15px 0;
+        transition: 0.4s;
+      }
+      #exercisePage{
+        width: 90%;
+        margin: auto;
+      }
+      #exercisePage>p{
+        font-size: 30px;
+        margin: 25px auto 10px auto;
+      }
+      tr td:first-child{
+        width: 11%;
+      }
+      tr div{
+        display: grid;
+        /* min-height: 60px; */
+      }
+      tr div img{
+           display: block;
+           height: auto;
+           max-width:100%;
+        justify-self:center;
+        align-self: center;
+      }
+      table, td {
+        border: 1px solid #ddd;
+        border-collapse: collapse;
+        padding: 8px;
+      }
+
+  tbody>tr:nth-child(odd)>td {
+    background-color: #f9f9f9;
+  }
+      table{
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 60px;
+      }
+      td a{
+        color: #428bca;
+        text-decoration: none;
+      }
+      td a:hover{
+        color: #2a6496;
+        text-decoration:underline;
+      }
+  </style>
 </head>
+
 <body>
-    <div id="container">
-      <div id="navbar">
-        <div id="logo">
-          <img src="https://www.gymwolf.com/img/gymwolf.png" alt="" />
+  <div id="container">
+    <div id="navbar">
+      <div id="logo">
+        <img src="https://www.gymwolf.com/img/gymwolf.png" alt="" />
+      </div>
+      <div id="menu">
+        <p>Progress</p>
+        <p>Calculators</p>
+        <p style="color:#428bca ;">Exercise and plans</p>
+        <p>My personal trainer</p>
+        <div>
+          <i class="fa fa-comments" aria-hidden="true"></i>
         </div>
+        <div id="profileName" onclick="openDropDown()">
+          <span id="tagname">Your profile is incomplete</span>
+          <span><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+          <div class="dropdown-content">
+            <p onclick="handleLogOut()">Log Out</p>
+          </div>
+        </div>
+        <div>
+          <i class="fa fa-search"></i>
+        </div>
+
+      </div>
+    </div>
+    <!--------------------Body-------------------------->
+    <div id="bodyMain">
+      <div id="mainImg">
+        <p>Exercises</p>
+        <img src="https://www.gymwolf.com/img/exercises.jpg" alt="">
+      </div>
+      <div id="menu_list">
         <div id="menu">
-          <p>Progress</p>
-          <p>Calculators</p>
-          <p>Exercise and plans</p>
-          <p>My personal trainer</p>
-          <div>
-            <i class="fa fa-comments" aria-hidden="true"></i>
-          </div>
-          <div id="profileName" onclick="openDropDown()">
-            <span id="tagname">Your profile is incomplete</span>
-            <span><i class="fa fa-caret-down" aria-hidden="true"></i></span>
-              <div class="dropdown-content">
-                 <p onclick="handleLogOut()">Log Out</p>
-              </div>
-          </div>
-          <div>
-              <i class="fa fa-search"></i>
-          </div>
-       
+          <p style="border-bottom:none;">Exercise List</p>
+          <p>My exercise</p>
+          <p>Workout plans</p>
+        </div>
+        <div>
+          <button>+ New workout plan</button>
         </div>
       </div>
-        <div id="footer-container">
-         <div id="footer">
-         <div class="col">
-            <p class="lead">ABOUT</p>
-             <p class="content">About us</p>
-             <p class="content">Contact</p>
-         </div>
-         <div class="col">
-            <p class="lead">LEGAL</p>
-             <p class="content">Terms of Service</p>
-             <p class="content">Privacy</p>
-             <p class="content">Pricing</p>
-         </div>
-         <div class="col">
-            <p class="lead">Get the app</p>
-            <img src="https://www.gymwolf.com/img/footer/android-button.png" alt="">
-            <img src="https://www.gymwolf.com/img/footer/ios-button.png" alt="">
-         </div>
-         <div class="col">
-            <p class="lead">SOCIAL</p>
-            <img id="fb" src="https://www.gymwolf.com/img/footer/fb-button.png"></img>
-         </div>
-         <div class="col">
-            <p class="lead">LANGUAGE</p>
-             <p class="content">Eesti keeles</p>
-         </div>
-      </div>
-        <hr>
-        <div id="copy">
-         <p>Copyright © Mooncascade OÜ. All Rights Reserved. Tel: +372 5344 5686. E-mail: info@gymwolf.com</p>
+      <div id="imageContainer">
+        <p>Exercise List</p>
+        <div id="cardsContainer">
+          <div>
+            <div>Chest</div>
+            <img src="https://www.gymwolf.com/images/category_chest.jpg" alt="">
+           
+          </div>
+          <div>
+            <img src="https://www.gymwolf.com/images/category_biceps.jpg" alt="">
+            <div>Biceps</div>
+          </div>
+          <div>
+            <img src="https://www.gymwolf.com/images/category_triceps.jpg" alt="">
+            <div>Triceps</div>
+          </div>
+          <div>
+            <img src="https://www.gymwolf.com/images/category_back.jpg" alt="">
+            <div>Back</div>
+          </div>
+          <div>
+            <img src="https://www.gymwolf.com/images/category_shoulder.jpg" alt="">
+            <div>Shoulder</div>
+          </div>
+          <div>
+            <img src="https://www.gymwolf.com/images/category_legs.jpg" alt="">
+            <div>Legs</div>
+          </div>
+          <div>
+            <img src="https://www.gymwolf.com/images/category_abdominal.jpg" alt="">
+            <div>Abdominal</div>
+          </div>
+          <div>
+            <img src="https://www.gymwolf.com/images/category_combined.jpg" alt="">
+            <div>Combined</div>
+          </div>
+          <div>
+            <img src="https://www.gymwolf.com/images/category_cardio.jpg" alt="">
+            <div>Cardio</div>
+          </div>
         </div>
       </div>
-    </div>      
+      <div id="exercisePage">
+        <p>Abdominal</p>
+        <table class="table table-striped table-bordered">
+          <tbody>
+            <tr>
+              <td class="exercises_small">
+                <div></div>
+              </td>
+              <td>
+                <a href=""><b>Ab crunch machine</b></a>
+                <br>
+                Abs crunch machine
+              </td>
+            </tr>
+            <tr>
+              <td class="exercises_small">
+                <div>
+                  <img class="img-responsive" src="https://www.gymwolf.com/images/exercises/1077_0_thumb.jpg" alt="Ab Rollout">
+                </div>
+              </td>
+              <td>
+                <a href=""><b>Ab Rollout</b></a>
+                <br>
+                This exercise works the abs and lower back and is the proper version of an ab roller.
+              </td>
+            </tr>
+            <tr>
+              <td class="exercises_small">
+                <div>
+                  <img class="img-responsive" src="https://www.gymwolf.com/images/exercises/1076_0_thumb.jpg" alt="Ab Rollout on Knees">
+                </div>
+              </td>
+              <td>
+                <a href=""><b>Ab Rollout on Knees</b></a>
+                <br>
+                This exercise works the abs and lower back and is the proper version of an ab roller. This versio...
+              </td>
+            </tr>
+            <tr>
+              <td class="exercises_small">
+                <div>
+                  <img class="img-responsive" src="https://www.gymwolf.com/images/exercises/1312_0_thumb.jpg"
+                    alt="Abdominal 4 Point Drawing In">
+                </div>
+              </td>
+              <td>
+                 <a href=""><b>Abdominal 4 Point Drawing In</b></a>
+                <br>
+                This is a simple but powerful exercise to strengthen the abs and the core, the muscles that suppo...
+              </td>
+            </tr>
+            <tr>
+              <td class="exercises_small">
+                <div>
+                  <img class="img-responsive" src="https://www.gymwolf.com/images/exercises/1075_0_thumb.jpg" alt="Bent Knee Hip Raise">
+                </div>
+              </td>
+              <td>
+                <a href=""><b>Bent Knee Hip Raise</b></a>
+                <br>
+                This is a good exercise core muscle development.
+              </td>
+            </tr>
+            <tr>
+              <td class="exercises_small">
+                <div>
+                  <img class="img-responsive" src="https://www.gymwolf.com/images/exercises/1073_0_thumb.jpg" alt="Cross Body Crunches">
+                </div>
+              </td>
+              <td>
+               <a href=""><b>Cross Body Crunches</b></a>
+                <br>
+                This version of the crunch works both the upper and lower portion of the abs.
+              </td>
+            </tr>
+            <tr>
+              <td class="exercises_small">
+                <div>
+                  <img class="img-responsive" src="https://www.gymwolf.com/images/exercises/1071_0_thumb.jpg" alt="Crunches">
+                </div>
+              </td>
+              <td>
+               <a href=""><b>Crunches</b></a>
+                <br>
+                This is the most common abdominal exercise and possibly the most often improperly performed. Her...
+              </td>
+            </tr>
+            <tr>
+              <td class="exercises_small">
+                <div>
+                  <img class="img-responsive" src="https://www.gymwolf.com/images/exercises/1072_0_thumb.jpg"
+                    alt="Crunches with Legs on Stability Ball">
+                </div>
+              </td>
+              <td>
+                <a href=""><b>Crunches with Legs on Stability Ball</b></a>
+                <br>
+                This exercise uses a Stability Ball as the base during your crunches.
+              </td>
+            </tr>
+            <tr>
+              <td class="exercises_small">
+                <div>
+                  <img class="img-responsive" src="https://www.gymwolf.com/images/exercises/1070_0_thumb.jpg" alt="Decline Crunches">
+                </div>
+              </td>
+              <td>
+                <a href=""><b>Decline Crunches</b></a>
+                <br>
+                Using a decline crunch allows you keep your legs steady and isolate all of the abdominal muscles.
+              </td>
+            </tr>
+            <tr>
+              <td class="exercises_small">
+                <div>
+                  <img class="img-responsive" src="https://www.gymwolf.com/images/exercises/1069_0_thumb.jpg" alt="Decline Oblique Crunches">
+                </div>
+              </td>
+              <td>
+                <a href=""><b>Decline Oblique Crunches</b></a>
+                <br>
+                This version of a decline crunch isolates the oblique (side) muscles of the abs.
+              </td>
+            </tr>
+            <tr>
+              <td class="exercises_small">
+                <div>
+                  <img class="img-responsive" src="https://www.gymwolf.com/images/exercises/1066_0_thumb.jpg" alt="Exercise Ball Pull-In">
+                </div>
+              </td>
+              <td>
+                <a href=""><b>Exercise Ball Pull-In</b></a>
+                <br>
+                This exercise uses a ball to isolate and work the lower abdominal muscles.
+              </td>
+            </tr>
+            <tr>
+
+              <td class="exercises_small">
+                <div>
+                  <img class="img-responsive" src="https://www.gymwolf.com/images/exercises/user/11.jpg" alt="Incline Crunches">
+                </div>
+              </td>
+              <td>
+                <a href=""><b>Incline Crunches</b></a>
+                <br>
+                Incline Crunches
+              </td>
+            </tr>
+            <tr>
+              <td class="exercises_small">
+                <div>
+                  <img class="img-responsive" src="https://www.gymwolf.com/images/exercises/user/23794.jpg" alt="L-Sit">
+                </div>
+              </td>
+              <td>
+                <a href=""><b>L-Sit</b></a>
+                <br>
+                The legs are bent at a 90 degree angle to the torso, so that the entire body forms an "L&amp;quo...
+              </td>
+            </tr>
+            <tr>
+              <td class="exercises_small">
+                <div>
+                </div>
+              </td>
+              <td>
+                <a href=""><b>Leg raise machine</b></a>
+                <br>
+                Leg raise machine
+              </td>
+            </tr>
+            <tr>
+
+              <td class="exercises_small">
+                <div>
+                  <img class="img-responsive" src="https://www.gymwolf.com/images/exercises/1318_0_thumb.jpg" alt="Leg Raises">
+                </div>
+              </td>
+              <td>
+                <a href=""><b>Leg Raises</b></a>
+                <br>
+                Leg raises work your lower abs which are usually hard muscles to target.
+              </td>
+            </tr>
+            <tr>
+              <td class="exercises_small">
+                <div>
+                  <img class="img-responsive" src="https://www.gymwolf.com/images/exercises/1074_0_thumb.jpg" alt="Seated Cable Ab Crunches">
+                </div>
+              </td>
+              <td>
+                <a href=""><b>Seated Cable Ab Crunches</b></a>
+                <br>
+                This exercise uses the weight of a cable machine to assist in a abs crunch.
+              </td>
+            </tr>
+            <tr>
+              <td class="exercises_small">
+                <div>
+                  <img class="img-responsive" src="https://www.gymwolf.com/images/exercises/1068_0_thumb.jpg" alt="Side Bend">
+                </div>
+              </td>
+              <td>
+                 <a href=""><b>Side Bend</b></a> 
+                <br>
+                This exercise works the obliques, the muscles on the sides of your abs.
+              </td>
+            </tr>
+            <tr>
+              <td class="exercises_small">
+                <div>
+                  <img class="img-responsive" src="https://www.gymwolf.com/images/exercises/1236_0_thumb.jpg" alt="Side Plank">
+                </div>
+              </td>
+              <td>
+                <a href=""><b>Side Plank</b></a>
+                <br>
+                A simple exercise for core strength and conditioning.
+              </td>
+            </tr>
+            <tr>
+
+              <td class="exercises_small">
+                <div>
+                  <img class="img-responsive" src="https://www.gymwolf.com/images/exercises/user/41.jpg" alt="Sit-ups">
+                </div>
+              </td>
+              <td>
+                 <a href=""><b>Sit-ups</b></a>
+                <br>
+                This is the most common abdominal exercise and possibly the most often improperly performed. Her...
+              </td>
+            </tr>
+            <tr>
+              <td class="exercises_small">
+                <div>
+                  <img class="img-responsive" src="https://www.gymwolf.com/images/exercises/user/22337.jpg" alt="Sit-Ups">
+                </div>
+              </td>
+              <td>
+               <a href=""><b>Sit-Ups</b></a>
+                <br>
+                A sit-up is a basic abdominal exercise.
+              </td>
+            </tr>
+            <tr>
+              <td class="exercises_small">
+                <div>
+                  <img class="img-responsive" src="https://www.gymwolf.com/images/exercises/1067_0_thumb.jpg"
+                    alt="Stability Ball Abdominal Crunches">
+                </div>
+              </td>
+              <td>
+                 <a href=""><b>Stability Ball Abdominal Crunches</b></a>
+                <br>
+                This crunch uses a Stability Ball. The ball allows you a better range of movement because it adap...
+              </td>
+            </tr>
+            <tr>
+              <td class="exercises_small">
+                <div>
+                  <img class="img-responsive" src="https://www.gymwolf.com/images/exercises/user/22453.jpg" alt="Toes To Bar">
+                </div>
+              </td>
+              <td>
+                 <a href=""><b>Toes To Bar</b></a>
+                <br>
+                The toes-to-bar is a calisthenics exercise that primarily targets the abs and to a lesser degree ...
+              </td>
+            </tr>
+            <tr>
+              <td class="exercises_small">
+                <div>
+                  <img class="img-responsive" src="https://www.gymwolf.com/images/exercises/user/22636.jpg" alt="V-Ups">
+                </div>
+              </td>
+              <td>
+                <a href=""><b>V-Ups</b></a>
+                <br>
+                V-Ups are an exercise that work both the upper and lower abdominal muscles at the same time. You ...
+              </td>
+            </tr>
+            <tr>
+              <td class="exercises_small">
+                <div>
+                  <img class="img-responsive" src="https://www.gymwolf.com/images/exercises/1151_0_thumb.jpg" alt="Weighted Ball Side Bend">
+                </div>
+              </td>
+              <td>
+                <a href=""><b>Weighted Ball Side Bend</b></a>
+                <br>This exercise use a Stability Ball instead of a bench. The Stability Ball conforms better to you...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+    <!-------------------Footer-------------------------->
+    <div id="footer-container">
+      <div id="footer">
+        <div class="col">
+          <p class="lead">ABOUT</p>
+          <p class="content">About us</p>
+          <p class="content">Contact</p>
+        </div>
+        <div class="col">
+          <p class="lead">LEGAL</p>
+          <p class="content">Terms of Service</p>
+          <p class="content">Privacy</p>
+          <p class="content">Pricing</p>
+        </div>
+        <div class="col">
+          <p class="lead">Get the app</p>
+          <img src="https://www.gymwolf.com/img/footer/android-button.png" alt="">
+          <img src="https://www.gymwolf.com/img/footer/ios-button.png" alt="">
+        </div>
+        <div class="col">
+          <p class="lead">SOCIAL</p>
+          <img id="fb" src="https://www.gymwolf.com/img/footer/fb-button.png"></img>
+        </div>
+        <div class="col">
+          <p class="lead">LANGUAGE</p>
+          <p class="content">Eesti keeles</p>
+        </div>
+      </div>
+      <hr>
+      <div id="copy">
+        <p>Copyright © Mooncascade OÜ. All Rights Reserved. Tel: +372 5344 5686. E-mail: info@gymwolf.com</p>
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>
 <script src="navbar.js"></script>

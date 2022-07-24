@@ -241,21 +241,19 @@
         </div>
         <div class="inputDiv">
              <label class="upside"  for="">Profile URL:</label>
-            <div>
+            <div id="urldiv">
                 <p>You can choose a personal URL for your profile page:</p>
-                <div class="input-group">
+                <div id="urlinputdiv" class="input-group">
                     <span class="input-group-addon">www.gymwolf.com/</span>
                     <input id="gwun" class="form-control" type="text" name="username">
                 </div>
             </div>
         </div>
-       <input id="signUpbtn" type="submit" value="Save">
+        <div id="savecontainer"> <input id="signUpbtn" type="submit" value="Save"></div>
+      
    </form>
 </div>
 <!----------------Profile Card----------->
-<div id="profileCard">
-    
-</div>
 </div>
 <!----------------Footer---------------->
         <div id="footer-container">
@@ -297,7 +295,7 @@
 <script>
    let userData=JSON.parse(localStorage.getItem("gymSignUp"))||[];
 
-let checkflag = JSON.parse(localStorage.getItem("authentication")) || false;
+// let checkflag = JSON.parse(localStorage.getItem("authentication")) || false;
 
 
     if(checkflag==true){
