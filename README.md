@@ -32,7 +32,9 @@ Clone the Repository from Github. Then do the following steps:
 
     npm run start
 ```
-    
+
+
+
 ## Screenshots
 
  ### Home Page
