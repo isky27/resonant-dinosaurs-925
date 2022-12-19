@@ -1,4 +1,5 @@
-# Gymwolf
+# Gymwolf-clone
+
 This is clone of Gymwolf which is a workout tracking tool.It was an individual project where user can add workouts, create own customized workout plans or 
 find suitable plan from other users.
 
@@ -11,6 +12,7 @@ JavaScript, Html, CSS,
 
 
 ## Deployment Link
+
 https://gymwolf1.netlify.app/
 
 
