@@ -36,17 +36,23 @@ Clone the Repository from Github. Then do the following steps:
 ## Screenshots
 
  ### Home Page
+ 
  This is the dashboard page when user visits the website for first time. Also, user can signup with their details
+ 
   ![App Screenshot](https://i.postimg.cc/XYdt8Rnz/gymwolf-dashboard-capture.png)
  
  
  
  ### Sign In Page
+ 
  In Sign in page where user need to give their credentials to access the protected parts of the website.
+ 
   ![App Screenshot](https://i.postimg.cc/mDHdLMh6/gymwolf-signin-capture.png)
  
  
  
  ### Landing Page
+ 
  Once user logged in will be re-directed to landing page.
+ 
   ![App Screenshot](https://i.postimg.cc/L5SVmbcn/gymwolf-landing-capture.png)
